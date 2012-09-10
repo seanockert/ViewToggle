@@ -2,18 +2,98 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>ViewToggle - Button to toggle Full Site view on mobiles</title>
+<title>ViewToggle - provides a 'full site' link to view the desktop web page on responsive sites</title>
+
+<style>
+	/* Styles for the demo page */
+	
+	html, body, h1 {padding:0;margin:0;}
+	
+	html {
+		background: #eee;
+	}
+	
+	body {
+		font-size: 1em;
+		line-height: 1.4;
+		background: #fff;
+		font-family:sans-serif;
+	}
+		
+		header {
+			padding:1.25em 1.25em 0;
+		}	
+
+	.box {
+		background:#aaa;
+		text-align:center;
+		float:left;
+		height:5em;
+		line-height:5em;
+		margin-bottom:1em;
+		font-size:2em;
+		width:100%;
+	}
+	
+	#viewtoggle {
+		display:block;
+		padding:1.25em;
+	}
+	
+
+	.clear {clear:both;}
+		
+
+	@media only screen and (min-width: 600px) {		
+			.box {
+				width: 31.64%;
+				margin-right: 2.53%;
+				
+			}
+			
+			.box.omega {
+				margin-right:0;
+			}							
+	}	
+	
+	@media only screen and (min-width: 980px) {
+		body {
+			width: 58.75em;
+			padding: 1.25em;
+			margin: 0 auto;
+		}
+		
+			header {
+				padding: 0;
+			}
+			
+			.box {
+				background: #096ACA;
+			}
+	}
+	
+
+</style>
+
 </head>
 <body>
+	<header>
+		<h1>ViewToggle Demo</h1>
+		<p>Provides a 'full site' link for visitors who want to see the desktop version of your responsive webpage. No framework needed, <1KB  gzipped. <a href="https://github.com/seanockert/ViewToggle">Download here</a></p>
+		<p><em>Visit this page on a mobile device and click 'View full site'.</em></p>
+	</header>
+	
+	<div class="box">Box 1</div>
+	<div class="box">Box 2</div>
+	<div class="box omega">Box 3</div>
 
-<h1>Resizing this page - notice that this text doesn't wrap on the full site</h1>
+	<br class="clear">
 
-<a href="#" title="" id="viewtoggle">View full site</a>
+	<a href="#" title="" id="viewtoggle">View full site</a>
 
-<script src="viewtoggle.min.js"></script>
+<script src="viewtoggle.js"></script>
 
 </body>
 </html>

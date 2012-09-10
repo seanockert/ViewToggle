@@ -1,6 +1,6 @@
 # ViewToggle #
 
-A tiny, no-frills, framework-independent, button to view a full website for use in responsive design.
+A simple, framework-independent, link to view the full site for visitors who want to see the desktop version of your responsive webpage. Demo here: http://seanockert.github.com/ViewToggle/
 
 License: Open-source. Feel free to do whatever you like with it!
 
@@ -13,9 +13,13 @@ ViewToggle uses local storage to remember the viewport on the previous visit (mo
 
 ## Basic use
 
-Download and reference viewtoggle.js from your document. Just before the closing </body> tag is good.
+Download and reference viewtoggle.js from your document. Just before the closing </body> tag is good:
 
     <script src="viewtoggle.js"></script>
+	
+Set your viewport to scale with the device:
+
+	<meta name="viewport" content="width=device-width">	
 
 Then give an ID of `viewtoggle` to the element you want to use as your View Full Site button. A good place to put this is in the footer of your page.
 
@@ -33,6 +37,7 @@ That's it really! On your mobile site, clicking this link will switch to the ful
 
 - On some sites, the page doesn't automatically zoom out to fit the window when the 'view full site' link is clicked
 - Local Storage is not supported in every browser. We could detect for it and remove the button using the following:
+
 	if (!viewtoggle.hasSupport()) {
 		button.parentNode.removeChild(button);  // Hide the button if no localstorage support. A bit drastic but the browsers we care about should support it
 	}

@@ -1,5 +1,5 @@
 /*
-* ViewToggle v.0.1.  
+* ViewToggle v.0.2  
 * (c) 2012: Sean Ockert, http://seanockert.github.com/ViewToggle/README.md 
 * Provides a way to toggle full-site/mobile view on a responsive design
 */
@@ -16,6 +16,7 @@ ViewToggle = (function (window) {
 	labelMobile = 'View mobile site', // Label to return to the mobile view
 	refresh = false, // Set this to true to force the page to refresh after the button is pressed. Use if you need to load background images that are defined in a different media query
 	fullwidth = 980, // Full site page width
+	devicewidth = 'device-width',
 	viewport = document.querySelector("meta[name=viewport]"),
 	mobile = true;
 
@@ -34,7 +35,8 @@ ViewToggle = (function (window) {
 				button.attachEvent('onclick', viewtoggle.toggle);
 			}
 		},
-		toggle : function () {
+		toggle : function (e) {
+			e.preventDefault();
 			// If the site is mobile, show the full site, else show the mobile site
 			mobile === true ? viewtoggle.showFull() : viewtoggle.showMobile(); 
 			if (refresh == true) {
@@ -43,13 +45,13 @@ ViewToggle = (function (window) {
 			return false;
 		},
 		showFull: function () { // Show the full width site by changing the viewport
-			viewport.setAttribute('content', 'user-scalable=yes, width=' + fullwidth + ';');
+			viewport.setAttribute('content', 'width=' + fullwidth);
 			mobile = false;
 			localStorage.isResponsive = 'false'; // Update stored variable
 			button.innerHTML = labelMobile;
 		},
 		showMobile: function () { // Show the mobile site
-			viewport.setAttribute('content', 'initial-scale=1.0, maximum-scale=1.0, width=device-width;');
+			viewport.setAttribute('content', 'width=' +devicewidth);
 			mobile = true;
 			localStorage.isResponsive = 'true';
 			button.innerHTML = labelFull;			
