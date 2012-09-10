@@ -28,26 +28,23 @@ That's it really! On your mobile site, clicking this link will switch to the ful
 
 ## Options
 
-	labelMobile = 'View mobile site' // Label to return to the mobile view
-	refresh = true // Set this to true to force the page to refresh after the button is pressed. Use if you need to load background images that are defined in a different media query
-	fullwidth = 980 // Full site page width
+* `labelMobile = 'View mobile site' // Label to return to the mobile view`
+* `refresh = true // Set this to true to force the page to refresh after the button is pressed. Use if you need to load background images that are defined in a different media query`
+* `fullwidth = 980 // Full site page width`
 
 ## Issues
 
 - On some sites, the page doesn't automatically zoom out to fit the window when the 'view full site' link is clicked
 - Local Storage is not supported in every browser. We could detect for it and remove the button using the following:
 
-`	if (!viewtoggle.hasSupport()) {
-	
-		button.parentNode.removeChild(button);  // Hide the button if no localstorage support. A bit drastic but the browsers we care about should support it
-	}
-
-	hasSupport: function() { // Only needed for IE browsers to check localstorage support	
-		try {
-		
-			return 'localStorage' in window && window['localStorage'] !== null;			
-		} catch (e) {			
-			return false;
-		}		
-	}
-`
+    if (!viewtoggle.hasSupport()) {
+        button.parentNode.removeChild(button);  // Hide the button if no localstorage support. A bit drastic but the browsers we care about should support it
+    }
+    
+    hasSupport: function() { // Only needed for IE browsers to check localstorage support	
+        try {		
+            return 'localStorage' in window && window['localStorage'] !== null;			
+        } catch (e) {			
+            return false;
+        }		
+    }
