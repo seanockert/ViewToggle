@@ -38,13 +38,20 @@ That's it really! On your mobile site, clicking this link will switch to the ful
 - Local Storage is not supported in every browser. We could detect for it and remove the button using the following:
 
 	if (!viewtoggle.hasSupport()) {
+	
 		button.parentNode.removeChild(button);  // Hide the button if no localstorage support. A bit drastic but the browsers we care about should support it
+
 	}
 
 	hasSupport: function() { // Only needed for IE browsers to check localstorage support
+	
 		try {
+		
 			return 'localStorage' in window && window['localStorage'] !== null;
+			
 		} catch (e) {	
+		
 			return false;
 		}		
+
 	}
