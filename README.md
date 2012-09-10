@@ -13,7 +13,7 @@ ViewToggle uses local storage to remember the viewport on the previous visit (mo
 
 ## Basic use
 
-Download and reference viewtoggle.js from your document. Just before the closing body tag is good
+Download and reference viewtoggle.js from your document. Just before the closing `</body>` tag is good
     
     	<script src="viewtoggle.js"></script>
 	
@@ -37,21 +37,17 @@ That's it really! On your mobile site, clicking this link will switch to the ful
 - On some sites, the page doesn't automatically zoom out to fit the window when the 'view full site' link is clicked
 - Local Storage is not supported in every browser. We could detect for it and remove the button using the following:
 
-	if (!viewtoggle.hasSupport()) {
+`	if (!viewtoggle.hasSupport()) {
 	
 		button.parentNode.removeChild(button);  // Hide the button if no localstorage support. A bit drastic but the browsers we care about should support it
-
 	}
 
-	hasSupport: function() { // Only needed for IE browsers to check localstorage support
-	
+	hasSupport: function() { // Only needed for IE browsers to check localstorage support	
 		try {
 		
-			return 'localStorage' in window && window['localStorage'] !== null;
-			
-		} catch (e) {	
-		
+			return 'localStorage' in window && window['localStorage'] !== null;			
+		} catch (e) {			
 			return false;
 		}		
-
 	}
+`
