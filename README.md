@@ -13,16 +13,13 @@ ViewToggle uses local storage to remember the viewport on the previous visit (mo
 
 ## Basic use
 
-Download and reference viewtoggle.js from your document. Just before the closing </body> tag is good:
-
+Download and reference viewtoggle.js from your document. Just before the closing </body> tag is good
     <script src="viewtoggle.js"></script>
 	
 Set your viewport to scale with the device:
-
 	<meta name="viewport" content="width=device-width">	
 
 Then give an ID of `viewtoggle` to the element you want to use as your View Full Site button. A good place to put this is in the footer of your page.
-
 	<a href="#" id="viewtoggle">View full site</a>
 
 That's it really! On your mobile site, clicking this link will switch to the full version by changing the viewport to a width of 980px. If your full site is of a different width simply change this value. Clicking it again will revert back to the default viewport
