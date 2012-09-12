@@ -7,9 +7,11 @@ License: Open-source. Feel free to do whatever you like with it!
 Copyright 2012: Sean Ockert (http://balsamade.com) 
 
 ## Overview
-ViewToggle changes the viewport of the page when a 'view full site' link is clicked on a responsively design website to force mobiles to serve up the full website instead of the mobile optimised version. It is heavily inspired by this post: http://creativeandcode.com/responsive-view-full-site/.
+ViewToggle changes the viewport of the page when a 'view full site' link is clicked on a responsively design website to force mobiles to serve up the full website instead of the mobile optimised version. It is heavily inspired by this post: http://creativeandcode.com/responsive-view-full-site and is useful for managing user expectations as discussed here: http://www.elezea.com/2012/09/responsive-design-expectations/
 
 ViewToggle uses local storage to remember the viewport on the previous visit (mobile or full site). 
+
+The link is hidden on IE7 and lower.
 
 ## Basic use
 
@@ -34,7 +36,6 @@ That's it really! On your mobile site, clicking this link will switch to the ful
 
 ## Issues
 
-- On some sites, the page doesn't automatically zoom out to fit the window when the 'view full site' link is clicked
 - Local Storage is not supported in every browser. We could detect for it and remove the button using the following:
 
     if (!viewtoggle.hasSupport()) {
