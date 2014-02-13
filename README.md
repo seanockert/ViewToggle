@@ -1,15 +1,12 @@
 # ViewToggle #
 
-A simple, framework-independent, link to view the full site for visitors who want to see the desktop version of your responsive webpage. Demo here: http://seanockert.github.com/ViewToggle/
-
-License: Open-source. Feel free to do whatever you like with it!
-
-Copyright 2012: Sean Ockert (http://balsamade.com) 
-
+Adds a link to a responsive site to force viewing the full website. [Demo here](http://seanockert.github.com/ViewToggle/): 
 ## Overview
-ViewToggle changes the viewport of the page when a 'view full site' link is clicked on a responsively design website to force mobiles to serve up the full website instead of the mobile optimised version. It is heavily inspired by this post: http://creativeandcode.com/responsive-view-full-site and is useful for managing user expectations as discussed here: http://www.elezea.com/2012/09/responsive-design-expectations/
+ViewToggle adds a link to _View full site_. This overrides the viewport of the webpage to force mobiles to serve up the full website view instead of the mobile optimised version. This is useful for managing user expectations as [discussed here](http://www.elezea.com/2012/09/responsive-design-expectations/).
 
-ViewToggle uses local storage to remember the viewport on the previous visit (mobile or full site). 
+It is inspired by [this post](http://creativeandcode.com/responsive-view-full-site )
+
+ViewToggle uses local storage to remember which viewport you selected for subsequent visits (mobile or full site). 
 
 The link is hidden on IE7 and lower.
 
@@ -23,10 +20,10 @@ Set your viewport to scale with the device:
 
 	<meta name="viewport" content="width=device-width">	
 
-Then give an ID of `viewtoggle` to the element you want to use as your View Full Site button. A good place to put this is in the footer of your page.
+Then give an ID of `viewtoggle` to the element you want to use as your _View full site_ button. A good place to put this is in the footer of your page.
 	<a href="#" id="viewtoggle">View full site</a>
 
-That's it really! On your mobile site, clicking this link will switch to the full version by changing the viewport to a width of 980px. If your full site is of a different width simply change this value. Clicking it again will revert back to the default viewport
+That's it really! On your mobile site, clicking this link will switch to the full version by changing the viewport to a width of 980px. Clicking the link again will revert back to the default viewport.
 
 ## Options
 
@@ -38,14 +35,19 @@ That's it really! On your mobile site, clicking this link will switch to the ful
 
 - Local Storage is not supported in every browser. We could detect for it and remove the button using the following:
 
-    if (!viewtoggle.hasSupport()) {
-        button.parentNode.removeChild(button);  // Hide the button if no localstorage support. A bit drastic but the browsers we care about should support it
-    }
+     if (!viewtoggle.hasSupport()) {
+         button.parentNode.removeChild(button);  // Hide the button if no localstorage support. A bit drastic but the browsers we care about should support it
+     }
     
-    hasSupport: function() { // Only needed for IE browsers to check localstorage support	
-        try {		
-            return 'localStorage' in window && window['localStorage'] !== null;			
-        } catch (e) {			
+     hasSupport: function() { // Only needed for IE browsers to check localstorage support	
+         try {		
+             return 'localStorage' in window && window['localStorage'] !== null;			
+         } catch (e) {			
             return false;
-        }		
-    }
+         }		
+     }
+    
+
+## License
+Feel free to do what you like with it!
+ 
